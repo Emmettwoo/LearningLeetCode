@@ -10,21 +10,74 @@ import java.util.ArrayList;
  */
 public class LeetCode206 {
 
+    /** Provided by LeetCode, Modify by Emmettwoo.
+     * Definition for singly-linked list.
+     */
+    class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+
+        @Override
+        public String toString() {
+            StringBuilder result = new StringBuilder();
+            ListNode currentNode = this;
+            while (currentNode != null) {
+                result.append(currentNode.val).append(" -> ");
+                currentNode = currentNode.next;
+            }
+            result.append("NULL;");
+            return result.toString();
+        }
+    }
+
+    class Solution {
+        public ListNode reverseList(ListNode head) {
+            if (head == null || head.next == null) {
+                return head;
+            }
+
+            // Initial current node (the first value in origin linked list).
+            ListNode currentNode = head;
+            // Initial target node (which after current node, move it to top).
+            ListNode targetNode = currentNode.next;
+
+            while (targetNode != null) {
+                // Pop out target node.
+                currentNode.next = targetNode.next;
+                // make target node on top.
+                targetNode.next = head;
+                // Redefine head node to target node.
+                head = targetNode;
+                // Locate next target node.
+                targetNode = currentNode.next;
+            }
+
+            return head;
+        }
+    }
+
     public static void main(String[] args) {
+        LeetCode206 leetCode206 = new LeetCode206();
+        leetCode206.demo();
+    }
+
+    public void demo() {
         // Initialize Solution.
         Solution solution = new Solution();
+        ListNode headNode = null;
 
-        // Null Test.
-        System.out.println(solution.reverseList(null));
-
-        // Solution Test.
-        ListNode headNode = generateLinkedList(0, 100, 2);
+        // Null Elements Test.
+        System.out.println(solution.reverseList(headNode));
+        // Two Elements Test.
+        headNode = generateLinkedList(0, 100, 2);
         System.out.println("Reverse LinkedList Result is: " + solution.reverseList(headNode));
+        // Ten Elements Test.
         headNode = generateLinkedList(0, 100, 10);
         System.out.println("Reverse LinkedList Result is: " + solution.reverseList(headNode));
     }
 
-    public static ListNode generateLinkedList(int minimum, int maximum, int length) {
+    public ListNode generateLinkedList(int minimum, int maximum, int length) {
         ArrayList<Integer> arrayList = RandomUtil.generateIntegerArrayList(minimum, maximum, length);
 
         ListNode headNode = new ListNode(arrayList.remove(0));
@@ -37,52 +90,5 @@ public class LeetCode206 {
 
         System.out.println("Integer LinkedList Generated: " + headNode);
         return headNode;
-    }
-}
-
-class Solution {
-    public ListNode reverseList(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-
-        // Initial current node (the first value in origin linked list).
-        ListNode currentNode = head;
-        // Initial target node (which after current node, move it to top).
-        ListNode targetNode = currentNode.next;
-
-        while (targetNode != null) {
-            // Pop out target node.
-            currentNode.next = targetNode.next;
-            // make target node on top.
-            targetNode.next = head;
-            // Redefine head node to target node.
-            head = targetNode;
-            // Locate next target node.
-            targetNode = currentNode.next;
-        }
-
-        return head;
-    }
-}
-
-/** Provided by LeetCode, Modify by Emmettwoo.
- * Definition for singly-linked list.
- */
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
-
-    @Override
-    public String toString() {
-        StringBuilder result = new StringBuilder();
-        ListNode currentNode = this;
-        while (currentNode != null) {
-            result.append(currentNode.val).append(" -> ");
-            currentNode = currentNode.next;
-        }
-        result.append("NULL;");
-        return result.toString();
     }
 }
