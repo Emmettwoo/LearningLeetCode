@@ -1,0 +1,8 @@
+# IDEA Files
+*.iml
+.idea/
+out/
+lib/
+
+# Others
+backups/
