@@ -3,8 +3,6 @@ package top.woohoo.linkedlist;
 import top.woohoo.utils.RandomUtil;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 /** 给定一个链表，判断链表中是否有环。
  * https://leetcode-cn.com/problems/linked-list-cycle/
