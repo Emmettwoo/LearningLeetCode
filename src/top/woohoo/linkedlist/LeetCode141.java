@@ -109,7 +109,7 @@ public class LeetCode141 {
         for (int index = 0; index < arrayList.size(); index++) {
             Integer value = arrayList.get(index);
             currentNode.next = new ListNode(value);
-            currentNode = currentNode.next;
+
 
             if (index == loopStart) {
                 /* fixme: When loopNode is the last node, loopNode.next will be null;
@@ -120,6 +120,8 @@ public class LeetCode141 {
 
                 loopNode = currentNode;
             }
+
+            currentNode = currentNode.next;
         }
 
         currentNode.next = loopNode;
