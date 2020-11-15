@@ -3,6 +3,10 @@ package top.woohoo.queue;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+/** 用队列实现栈
+ * https://leetcode-cn.com/problems/implement-stack-using-queues/
+ * @author Emmettwoo
+ */
 public class LeetCode225 {
 
     class MyStack {

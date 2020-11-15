@@ -6,6 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+/** 有效的括号
+ * https://leetcode-cn.com/problems/valid-parentheses/
+ * @author Emmettwoo
+ */
 public class LeetCode20 {
 
     class Solution {

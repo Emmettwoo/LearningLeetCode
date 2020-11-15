@@ -5,6 +5,10 @@ import top.woohoo.utils.RandomUtil;
 import java.util.ArrayList;
 import java.util.Stack;
 
+/** K 个一组翻转链表
+ * https://leetcode-cn.com/problems/reverse-nodes-in-k-group/
+ * @author Emmettwoo
+ */
 public class LeetCode25 {
 
     /** Provided by LeetCode, Modify by Emmettwoo.
