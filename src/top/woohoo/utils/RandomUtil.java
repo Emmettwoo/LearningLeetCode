@@ -1,6 +1,7 @@
 package top.woohoo.utils;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 /**
  * @author Emmettwoo
@@ -36,5 +37,17 @@ public class RandomUtil {
 
     public static Integer generateInteger(int minimum, int maximum) {
         return (int)(minimum + Math.random() * (maximum - minimum));
+    }
+
+    public static String generateStringWithCharacterSet(int stringLength, Character[] characterSet) {
+        StringBuilder result = new StringBuilder();
+        for (int count = 0; count < stringLength; count++) {
+            result.append(RandomUtil.generateCharacterWithCharacterSet(characterSet));
+        }
+        return result.toString();
+    }
+
+    public static Character generateCharacterWithCharacterSet(Character[] characterSet) {
+        return characterSet[(int)(Math.random() * characterSet.length)];
     }
 }
