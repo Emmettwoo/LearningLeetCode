@@ -1,8 +1,10 @@
-package top.woohoo.linkedlist;
+package top.woohoo.set;
 
 import top.woohoo.utils.RandomUtil;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /** 给定一个链表，判断链表中是否有环。
  * https://leetcode-cn.com/problems/linked-list-cycle/
@@ -29,27 +31,15 @@ public class LeetCode142 {
 
     class Solution {
         public ListNode detectCycle(ListNode head) {
-            if (head == null) {
-                return null;
-            }
+            Set<ListNode> usedNodes = new HashSet<>();
 
-            ListNode slowPointer = head;
-            ListNode fastPointer = head;
-
-            // todo: Simplify the loop conditions.
-            while (slowPointer.next != null && fastPointer.next != null && fastPointer.next.next != null) {
-                slowPointer = slowPointer.next;
-                fastPointer = fastPointer.next.next;
-
-                // https://leetcode-cn.com/problems/linked-list-cycle-ii/solution/linked-list-cycle-ii-kuai-man-zhi-zhen-shuang-zhi-/
-                if (slowPointer == fastPointer) {
-                    fastPointer = head;
-                    while (slowPointer != fastPointer) {
-                        slowPointer = slowPointer.next;
-                        fastPointer = fastPointer.next;
-                    }
-                    return slowPointer;
+            ListNode currentNode = head;
+            while (currentNode != null) {
+                if (usedNodes.contains(currentNode)) {
+                    return currentNode;
                 }
+                usedNodes.add(currentNode);
+                currentNode = currentNode.next;
             }
 
             return null;
