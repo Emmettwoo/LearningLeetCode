@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 public class LeetCode15 {
 
     class Solution {
-        List<List<Integer>> result = new ArrayList<>();
 
         public List<List<Integer>> threeSum(int[] nums) {
+            List<List<Integer>> result = new ArrayList<>();
             int length = nums.length;
             Arrays.sort(nums);
 
