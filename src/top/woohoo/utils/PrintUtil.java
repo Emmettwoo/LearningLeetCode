@@ -1,12 +1,12 @@
 package top.woohoo.utils;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Emmettwoo
  */
 public class PrintUtil {
-    public static String printIntegerArrayList(ArrayList<Integer> arrayList) {
+    public static String printIntegerArrayList(List<Integer> arrayList) {
         StringBuilder result = new StringBuilder();
         arrayList.forEach((value) -> {
             result.append(value).append(" -> ");
