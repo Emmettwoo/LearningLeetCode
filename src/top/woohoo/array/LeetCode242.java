@@ -1,7 +1,6 @@
-package top.woohoo.map;
+package top.woohoo.array;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 /** 有效的字母异位词
  * https://leetcode-cn.com/problems/valid-anagram/
@@ -11,31 +10,18 @@ public class LeetCode242 {
 
     class Solution {
         public boolean isAnagram(String s, String t) {
-            Map<Character, Integer> map = new HashMap<>(s.length());
+            int[] sCounter = new int[26];
+            int[] tCounter = new int[26];
 
-            // Store s in map.
             for (char c : s.toCharArray()) {
-                if (map.containsKey(c)) {
-                    map.put(c, map.get(c) + 1);
-                } else {
-                    map.put(c, 1);
-                }
+                sCounter[c - 'a']++;
             }
 
-            // Delete t from map.
             for (char c : t.toCharArray()) {
-                if (map.containsKey(c)) {
-                    if (map.get(c) == 1) {
-                        map.remove(c);
-                    } else {
-                        map.put(c, map.get(c) - 1);
-                    }
-                } else {
-                    return false;
-                }
+                tCounter[c - 'a']++;
             }
 
-            return map.isEmpty();
+            return Arrays.equals(sCounter, tCounter);
         }
     }
 
