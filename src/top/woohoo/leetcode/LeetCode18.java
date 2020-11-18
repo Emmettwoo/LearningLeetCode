@@ -1,4 +1,4 @@
-package top.woohoo.array;
+package top.woohoo.leetcode;
 
 import top.woohoo.utils.PrintUtil;
 

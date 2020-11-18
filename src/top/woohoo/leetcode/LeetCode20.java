@@ -1,4 +1,4 @@
-package top.woohoo.stack;
+package top.woohoo.leetcode;
 
 import top.woohoo.utils.RandomUtil;
 
@@ -13,17 +13,6 @@ import java.util.Stack;
 public class LeetCode20 {
 
     class Solution {
-        /* interesting solution, but low efficiency.
-        public boolean isValid(String s) {
-            int nowLength = 0;
-            while (nowLength != s.length()) {
-                nowLength = s.length();
-                s = s.replace("()", "").replace("[]", "").replace("{}", "");
-            }
-            return s.length() == 0;
-        }
-        */
-
         public boolean isValid(String s) {
             Stack<Character> stack = new Stack<>();
             Map<Character, Character> bracketsMap = new HashMap<Character, Character>() {{
@@ -43,6 +32,17 @@ public class LeetCode20 {
             }
             return stack.isEmpty();
         }
+
+        /** interesting solution, but low efficiency.
+        public boolean isValid(String s) {
+            int nowLength = 0;
+            while (nowLength != s.length()) {
+                nowLength = s.length();
+                s = s.replace("()", "").replace("[]", "").replace("{}", "");
+            }
+            return s.length() == 0;
+        }
+        */
     }
 
     public static void main(String[] args) {

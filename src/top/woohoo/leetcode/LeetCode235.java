@@ -1,4 +1,4 @@
-package top.woohoo.tree;
+package top.woohoo.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;

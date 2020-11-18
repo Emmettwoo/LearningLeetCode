@@ -1,4 +1,4 @@
-package top.woohoo.linkedlist;
+package top.woohoo.leetcode;
 
 import top.woohoo.utils.RandomUtil;
 
@@ -35,7 +35,6 @@ public class LeetCode141 {
     }
 
     class Solution {
-
         public boolean hasCycle(ListNode head) {
             if (head == null) {
                 return false;
@@ -56,6 +55,23 @@ public class LeetCode141 {
 
             return false;
         }
+
+        /** Solve problem by using Set.
+        public boolean hasCycle(ListNode head) {
+            Set<ListNode> usedNodes = new HashSet<>();
+
+            ListNode currentNode = head;
+            while (currentNode != null) {
+                if (usedNodes.contains(currentNode)) {
+                    return true;
+                }
+                usedNodes.add(currentNode);
+                currentNode = currentNode.next;
+            }
+
+            return false;
+        }
+		*/
     }
 
     public static void main(String[] args) {

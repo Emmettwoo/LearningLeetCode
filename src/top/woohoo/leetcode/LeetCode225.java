@@ -1,4 +1,4 @@
-package top.woohoo.queue;
+package top.woohoo.leetcode;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

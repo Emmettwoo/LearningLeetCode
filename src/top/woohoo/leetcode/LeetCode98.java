@@ -1,4 +1,4 @@
-package top.woohoo.tree;
+package top.woohoo.leetcode;
 
 /** 验证二叉搜索树
  * https://leetcode-cn.com/problems/validate-binary-search-tree/
@@ -32,7 +32,6 @@ public class LeetCode98 {
             }
         }
     }
-
 
     public static void main(String[] args) {
         LeetCode98 leetCode98 = new LeetCode98();

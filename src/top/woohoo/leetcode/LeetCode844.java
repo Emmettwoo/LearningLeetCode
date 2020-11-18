@@ -1,4 +1,4 @@
-package top.woohoo.stack;
+package top.woohoo.leetcode;
 
 import java.util.Stack;
 

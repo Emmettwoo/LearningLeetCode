@@ -1,4 +1,4 @@
-package top.woohoo.heap;
+package top.woohoo.leetcode;
 
 import top.woohoo.utils.PrintUtil;
 
@@ -12,28 +12,6 @@ import java.util.Deque;
 public class LeetCode239 {
 
     class Solution {
-        /* 超出时间限制
-        public int[] maxSlidingWindow(int[] nums, int k) {
-            int maxIndex = 0;
-            int length = nums.length;
-            int slideTimes = length - k + 1;
-            int[] results = new int[slideTimes];
-
-            for (int times = 0; times < slideTimes; times++) {
-                for (int index = times; index < k + times; index++) {
-                    if (maxIndex < times) {
-                        maxIndex = times;
-                    }
-                    if (nums[index] > nums[maxIndex]) {
-                        maxIndex = index;
-                    }
-                }
-                results[times] = nums[maxIndex];
-            }
-            return results;
-        }
-        */
-
         public int[] maxSlidingWindow(int[] nums, int k) {
             if (nums == null || k <= 0) {
                 return null;
@@ -62,6 +40,28 @@ public class LeetCode239 {
             }
             return results;
         }
+
+        /** 嵌套循环，超出时间限制
+         public int[] maxSlidingWindow(int[] nums, int k) {
+         int maxIndex = 0;
+         int length = nums.length;
+         int slideTimes = length - k + 1;
+         int[] results = new int[slideTimes];
+
+         for (int times = 0; times < slideTimes; times++) {
+         for (int index = times; index < k + times; index++) {
+         if (maxIndex < times) {
+         maxIndex = times;
+         }
+         if (nums[index] > nums[maxIndex]) {
+         maxIndex = index;
+         }
+         }
+         results[times] = nums[maxIndex];
+         }
+         return results;
+         }
+         */
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package top.woohoo.array;
+package top.woohoo.leetcode;
 
 import top.woohoo.utils.PrintUtil;
 
@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 public class LeetCode15 {
 
     class Solution {
-
         public List<List<Integer>> threeSum(int[] nums) {
             List<List<Integer>> result = new ArrayList<>();
             int length = nums.length;
