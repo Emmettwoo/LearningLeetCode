@@ -1,8 +1,6 @@
 package top.woohoo.leetcode;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 有效的字母异位词
